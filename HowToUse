@@ -1,0 +1,5 @@
+1.getimage.py で動画をイメージ(png)化
+2.E_getbw で二値画像を1,0からなるテキストファイルに変換
+3.andbw.py で初期状態からの重なりの変位を計算
+4.solvecorr.cpp で重なりについての相関を取得
+5.E_makevideo でイメージを比較

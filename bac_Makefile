@@ -1,0 +1,11 @@
+LIBS = `pkg-config --libs opencv`
+CFLAGS = `pkg-config --cflags opencv`
+
+test: getbw.o
+	g++ -o $@ $(LIBS) getbw.o
+
+getbw.o: getbw.cpp
+	g++ -c $(CFLAGS) getbw.cpp
+
+clean:
+	rm -f getbw.o

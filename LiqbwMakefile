@@ -1,0 +1,11 @@
+LIBS = `pkg-config --libs opencv`
+CFLAGS = `pkg-config --cflags opencv`
+
+E_liqbw: o_liqbw.o
+	g++ -o $@ $(LIBS) o_liqbw.o
+
+o_liqbw.o: liqbw.cpp
+	g++ -c $(CFLAGS) liqbw.cpp -o $@
+
+clean:
+	rm -f $(OBJECTS) $(TARGET)
