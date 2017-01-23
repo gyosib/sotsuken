@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016/Arch Linux) (preloaded format=platex 2016.12.6)  20 JAN 2017 10:45
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016/Arch Linux) (preloaded format=platex 2016.12.6)  23 JAN 2017 15:14
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -450,18 +450,45 @@ LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
 
 LaTeX Warning: Reference `fig:equip' on page 2 undefined on input line 77.
 
-[2] (./sotsuron.aux)
+File: overall.png Graphic file (type bmp)
+<overall.png>
+Overfull \hbox (23.80182pt too wide) in paragraph at lines 113--114
+[][] 
+ []
+
+[2]
+File: init.png Graphic file (type bmp)
+ <init.png>
+Overfull \hbox (23.80182pt too wide) in paragraph at lines 123--124
+[][] 
+ []
+
+
+LaTeX Warning: Reference `fig:relative' on page 3 undefined on input line 132.
+
+File: diff.png Graphic file (type bmp)
+<diff.png>
+Overfull \hbox (17.77942pt too wide) in paragraph at lines 135--136
+[][] 
+ []
+
+File: zeropoint.png Graphic file (type bmp)
+<zeropoint.png>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [3]
+(./sotsuron.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 11002 strings out of 493682
- 225556 string characters out of 6154347
+ 11023 strings out of 493682
+ 225893 string characters out of 6154347
  272508 words of memory out of 5000000
- 14385 multiletter control sequences out of 15000+600000
+ 14398 multiletter control sequences out of 15000+600000
  14008 words of font info for 62 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
  55i,9n,59p,446b,653s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron.dvi (2 pages, 14244 bytes).
+Output written on sotsuron.dvi (3 pages, 17548 bytes).

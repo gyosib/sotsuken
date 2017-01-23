@@ -1,4 +1,4 @@
-PWD /home/shouta/programing/tex/sotsuron
+PWD /home/shouta/programing/python/sotsuken/sotsuron
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /usr/share/texmf-dist/web2c/texmf.cnf
 INPUT /var/lib/texmf/web2c/eptex/platex.fmt
@@ -162,4 +162,12 @@ INPUT bb.png
 INPUT extractbb -O bb.png
 OUTPUT sotsuron.dvi
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT overall.png
+INPUT extractbb -O overall.png
+INPUT init.png
+INPUT extractbb -O init.png
+INPUT diff.png
+INPUT extractbb -O diff.png
+INPUT zeropoint.png
+INPUT extractbb -O zeropoint.png
 INPUT sotsuron.aux
