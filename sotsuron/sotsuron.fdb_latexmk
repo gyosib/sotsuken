@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1485152089 "sotsuron.dvi" "sotsuron.pdf" "sotsuron" 1485152090
-  "sotsuron.dvi" 1485152089 17548 fb41284a0678c0b4492ac1f99a9fee01 "latex"
+["dvipdf"] 1485410933 "sotsuron.dvi" "sotsuron.pdf" "sotsuron" 1485410934
+  "sotsuron.dvi" 1485410933 17544 d74bf3041b806689476cae489d40e0ac "latex"
   (generated)
   "sotsuron.pdf"
-["latex"] 1485152088 "sotsuron.tex" "sotsuron.dvi" "sotsuron" 1485152090
+["latex"] 1485410932 "sotsuron.tex" "sotsuron.dvi" "sotsuron" 1485410934
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1479649810 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1479560679 468 53f854284f6afa6c36aaa2d1090ecc12 ""
   "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm" 1479560679 468 53f854284f6afa6c36aaa2d1090ecc12 ""
@@ -103,17 +103,17 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1479649825 31669 df537245012f3e5f05bdc55644b7a3df ""
   "/var/lib/texmf/web2c/eptex/platex.fmt" 1481011272 7340597 9811d0cc0d8aa621265b542a2b29ae26 ""
   "bb.png" 1484886094 36879 9a74cfd3ba0123d7051ff66acb3ff292 ""
-  "diff.png" 1485148103 68369 9c8c11e581e023140bebbbcde87aeaf4 ""
+  "diff.png" 1485409982 61941 145f05591a885f68d5ba2e31422c66ee ""
   "extractbb -O bb.png" 0 -1 0 ""
   "extractbb -O diff.png" 0 -1 0 ""
   "extractbb -O init.png" 0 -1 0 ""
   "extractbb -O overall.png" 0 -1 0 ""
   "extractbb -O zeropoint.png" 0 -1 0 ""
-  "init.png" 1485147991 45039 7a1d11e12818f7944670652a89d79b6a ""
-  "overall.png" 1485147888 53569 52e25773be15f7e24cece824ec08a8b5 ""
-  "sotsuron.aux" 1485152089 1712 df92666d3d67b0c48e1253743e41be06 ""
-  "sotsuron.tex" 1485151935 9408 a98419c4bb3a57c99e23bdf0eaed7712 ""
-  "zeropoint.png" 1485152074 24821 9cb8a1bf9ed0fe677c3c27baeaf494cb ""
+  "init.png" 1485409786 41324 21e653b31e66c216577774b4556f7084 ""
+  "overall.png" 1485409744 62198 90055b21b793d37eccae8a70d38ce952 ""
+  "sotsuron.aux" 1485410933 1713 3a9a27001b50abc6dab68c9bbc535d56 ""
+  "sotsuron.tex" 1485410930 9405 e585d5287c46ad9cbba4f8d75e038b75 ""
+  "zeropoint.png" 1485410015 31934 9756bff16a317933f47a4ad6b6083fa2 ""
   (generated)
   "sotsuron.log"
   "sotsuron.aux"

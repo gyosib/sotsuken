@@ -41,7 +41,7 @@ def countone(path_input_dir,path_output_dir):
 				k = 0
 				for pix in row:
 					#print([pix,row_base[k]])
-					if(pix == args[2] and pix == row_base[k]):
+					if(pix == row_base[k]):
 						count = count + 1
 					k = k + 1
 				j = j+1
