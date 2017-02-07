@@ -19,7 +19,7 @@ __author__ = 'Evgeniya Predybaylo'
 
 # READ THE DATA
 #sst = np.loadtxt('sst_nino3.dat')  # input SST time series
-sst = np.loadtxt('white_cut.csv')  # input SST time series
+sst = np.loadtxt('glass_cut.csv')  # input SST time series
 
 #----------C-O-M-P-U-T-A-T-I-O-N------S-T-A-R-T-S------H-E-R-E------------------------------------------------------
 
