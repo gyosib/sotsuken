@@ -95,7 +95,7 @@ set my2tics default
 set mcbtics default
 set mrtics default
 set xtics border in scale 1,0.5 mirror norotate  autojustify
-set xtics  norangelimit 0.001
+set xtics  norangelimit 1
 set ytics border in scale 1,0.5 mirror norotate  autojustify
 set ytics  norangelimit autofreq 
 set ztics border in scale 1,0.5 nomirror norotate  autojustify
@@ -122,17 +122,17 @@ set rrange [ * : * ] noreverse nowriteback
 set trange [ * : * ] noreverse nowriteback
 set urange [ * : * ] noreverse nowriteback
 set vrange [ * : * ] noreverse nowriteback
-set xlabel "" 
+set xlabel "{/Symbol D}t [ms]" 
 set xlabel  font "" textcolor lt -1 norotate
 set x2label "" 
 set x2label  font "" textcolor lt -1 norotate
-set xrange [ 0.00000 : 0.00400000 ] noreverse nowriteback
+set xrange [ 0.00000 : 4.00000 ] noreverse nowriteback
 set x2range [ * : * ] noreverse nowriteback
-set ylabel "" 
+set ylabel "dG({/Symbol D}t) / d{/Symbol D}t" 
 set ylabel  font "" textcolor lt -1 rotate by -270
 set y2label "" 
 set y2label  font "" textcolor lt -1 rotate by -270
-set yrange [ -50.0000 : 50.0000 ] noreverse nowriteback
+set yrange [ -40.0000 : 10.0000 ] noreverse nowriteback
 set y2range [ * : * ] noreverse nowriteback
 set zlabel "" 
 set zlabel  font "" textcolor lt -1 norotate
@@ -167,10 +167,10 @@ set psdir
 set fit brief errorvariables nocovariancevariables errorscaling prescale nowrap v5
 GNUTERM = "qt"
 x = 0.0
-lasty = 0.883103642149834
+lasty = 0.958772985048977
 lastx = 0.0998
 dx = 0.000200000000000006
-dy = 0.000425038535930566
+dy = 0.00033797330583718
 ## Last datafile plotted: "water.csv"
-plot "iron.csv" using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1-dx*0.5):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "salmon" lw 3 title "Metal", "bb.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1-dx*0.5):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "orange" lw 3 title "BB", "white.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1-dx*0.5):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "turquoise" lw 3 title "EPS", "sand1520.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1-dx*0.5):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "red" lw 3 title "sand1520", "sand2030.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1-dx*0.5):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "blue" lw 3 title "sand2030", "seasand.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1-dx*0.5):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "dark-green" lw 3 title "sea sand","glass.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1-dx*0.5):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "magenta" lw 3 title "glass","water.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1-dx*0.5):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "purple" lw 3 title "water"
+plot "iron.csv" using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1*1000-dx*0.5*100):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "salmon" lw 3 title "Metal", "bb.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1*1000-dx*0.5*1000):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "orange" lw 3 title "BB", "white.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1*1000-dx*0.5*1000):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "turquoise" lw 3 title "EPS", "sand1520.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1*1000-dx*0.5*1000):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "red" lw 3 title "sand1520", "sand2030.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1*1000-dx*0.5*1000):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "blue" lw 3 title "sand2030", "seasand.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1*1000-dx*0.5*1000):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "dark-green" lw 3 title "sea sand","glass.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1*1000-dx*0.5*1000):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "magenta" lw 3 title "glass","water.csv"  using (dy=$2-lasty,dx=$1-lastx,lasty=$2,lastx=$1,$1*1000-dx*0.5*1000):($0==0 ? (1/0,lasty=$2,lastx=$1) : dy/dx) w l lc rgb "purple" lw 3 title "water"
 #    EOF

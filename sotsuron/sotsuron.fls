@@ -150,24 +150,36 @@ INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
+INPUT bb_image.png
+INPUT extractbb -O bb_image.png
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
-INPUT bb.png
-INPUT extractbb -O bb.png
 OUTPUT sotsuron.dvi
+INPUT 0.png
+INPUT extractbb -O 0.png
+INPUT 3.png
+INPUT extractbb -O 3.png
+INPUT 0and3.png
+INPUT extractbb -O 0and3.png
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-INPUT overall.png
-INPUT extractbb -O overall.png
+INPUT multi.png
+INPUT extractbb -O multi.png
 INPUT init.png
 INPUT extractbb -O init.png
 INPUT diff.png
 INPUT extractbb -O diff.png
-INPUT zeropoint.png
-INPUT extractbb -O zeropoint.png
+INPUT one.png
+INPUT extractbb -O one.png
+INPUT water_two.png
+INPUT extractbb -O water_two.png
+INPUT water_line.png
+INPUT extractbb -O water_line.png
 INPUT sotsuron.aux

@@ -10,7 +10,7 @@
 #    	gnuplot home:     http://www.gnuplot.info
 #    	faq, bugs, etc:   type "help FAQ"
 #    	immediate help:   type "help"  (plot window: hit 'h')
-# set terminal qt 0 font "14,9"
+# set terminal qt 0 font "Sans,9"
 # set output
 unset clip points
 set clip one
@@ -122,11 +122,11 @@ set rrange [ * : * ] noreverse nowriteback
 set trange [ * : * ] noreverse nowriteback
 set urange [ * : * ] noreverse nowriteback
 set vrange [ * : * ] noreverse nowriteback
-set xlabel "Time[sec]" 
+set xlabel "{/Symbol D}t [ms]" 
 set xlabel  font "" textcolor lt -1 norotate
 set x2label "" 
 set x2label  font "" textcolor lt -1 norotate
-set xrange [ 0.00000 : 0.100000 ] noreverse nowriteback
+set xrange [ 0.00000 : 1.00000 ] noreverse nowriteback
 set x2range [ * : * ] noreverse nowriteback
 set ylabel "G({/Symbol D}t)" 
 set ylabel  font "" textcolor lt -1 rotate by -270
@@ -168,5 +168,5 @@ set fit brief errorvariables nocovariancevariables errorscaling prescale nowrap 
 GNUTERM = "qt"
 x = 0.0
 ## Last datafile plotted: "water.csv"
-plot "iron.csv"  lc rgb "salmon" lw 3 title "Metal", "bb.csv"  lc rgb "orange" lw 3 title "BB", "white.csv"  lc rgb "turquoise" lw 3 title "EPS", "sand1520.csv"  lc rgb "red" lw 3 title "sand1520", "sand2030.csv"  lc rgb "blue" lw 3 title "sand2030", "seasand.csv"  lc rgb "dark-green" lw 3 title "sea sand","glass.csv"  lc rgb "magenta" lw 3 title "glass","water.csv"  lc rgb "purple" lw 3 title "water"
+plot "iron.csv" using ($1*1000):2 lc rgb "salmon" lw 3 title "Metal", "bb.csv" using ($1*1000):2 lc rgb "orange" lw 3 title "BB", "white.csv" using ($1*1000):2 lc rgb "turquoise" lw 3 title "EPS", "sand1520.csv" using ($1*1000):2 lc rgb "red" lw 3 title "sand1520", "sand2030.csv" using ($1*1000):2 lc rgb "blue" lw 3 title "sand2030", "seasand.csv"  using ($1*1000):2 lc rgb "dark-green" lw 3 title "sea sand","glass.csv" using ($1*1000):2 lc rgb "magenta" lw 3 title "glass","water.csv" using ($1*1000):2 lc rgb "purple" lw 3 title "water"
 #    EOF
