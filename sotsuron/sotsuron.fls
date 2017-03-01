@@ -126,6 +126,18 @@ INPUT /usr/share/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/share/texmf-dist/tex/latex/tools/array.sty
 INPUT /usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
 INPUT /usr/share/texmf-dist/tex/latex/booktabs/booktabs.sty
+INPUT listings.sty
+INPUT listings.sty
+INPUT /usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/share/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/share/texmf-dist/tex/latex/listings/listings.cfg
+INPUT jlisting.sty
+INPUT jlisting.sty
+INPUT /usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/share/texmf-dist/tex/latex/listings/lstmisc.sty
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypatterns.code.tex
 INPUT /usr/share/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.code.tex
@@ -147,6 +159,7 @@ INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
+OUTPUT sotsuron.dvi
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
@@ -155,12 +168,14 @@ INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
+INPUT sotsuron.toc
+INPUT sotsuron.toc
+OUTPUT sotsuron.toc
 INPUT bb_image.png
 INPUT extractbb -O bb_image.png
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
-OUTPUT sotsuron.dvi
 INPUT 0.png
 INPUT extractbb -O 0.png
 INPUT 3.png
@@ -178,6 +193,10 @@ INPUT diff.png
 INPUT extractbb -O diff.png
 INPUT one.png
 INPUT extractbb -O one.png
+INPUT two_big.png
+INPUT extractbb -O two_big.png
+INPUT three_up.png
+INPUT extractbb -O three_up.png
 INPUT water_two.png
 INPUT extractbb -O water_two.png
 INPUT water_line.png

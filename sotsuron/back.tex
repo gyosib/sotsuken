@@ -1,31 +1,8 @@
 \documentclass[a4paper,10pt,twocolumn,dvipdfmx]{jsarticle}
-%\documentclass[a4paper,10pt,dvipdfmx]{jsarticle}
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{tikz}
 \usepackage{here}
 \usepackage{array,booktabs}
-\usepackage{listings,jlisting}
-
-\lstset{%
-  language={C},
-  basicstyle={\small},%
-  identifierstyle={\small},%
-  commentstyle={\small\itshape},%
-  keywordstyle={\small\bfseries},%
-  ndkeywordstyle={\small},%
-  stringstyle={\small\ttfamily},
-  frame={tb},
-  breaklines=true,
-  columns=[l]{fullflexible},%
-  numbers=left,%
-  xrightmargin=0zw,%
-  xleftmargin=3zw,%
-  numberstyle={\scriptsize},%
-  stepnumber=1,
-  numbersep=1zw,%
-  lineskip=-0.5ex%
-}
-
 \usetikzlibrary{patterns}
 
 \newcommand{\Dt}{\Delta t}
@@ -45,22 +22,14 @@
 %\addtolength{\topmargin}{-1truein}
 
 \begin{document}
-%\onecolumn{
-
-\maketitle
 \twocolumn[
+\maketitle
 \begin{abstract}
 直観的な視覚情報において「ふうあい」は重要な要素の一つである。しかし、そのふうあいを言語で説明することは難しく、「暗黙知の領域」とされてきた。だが、近年では0.1 msレベルでの撮影を手軽に行えるようになり、この領域の基礎研究が進められてきた。以前までの研究では粉や水のハイスピード映像を撮影し、目視によってその特徴を調査してきた。本研究では二値化画像処理を中心としたコンピュータによる解析を行うことで粉粒体落下運動の映像の自己相関関数$G(\Delta t)$を求めた。テクスチャ状の特徴と比較し、粉粒体の落下運動の映像を数値で説明することを試みた。 \par
 \end{abstract}
-%}
-
-\tableofcontents
-]
-
-\clearpage
+] 
 
 \section{物体の運動評価法}
-%\lstinputlisting[caption=hoge,label=hoge]{"test.txt"}
 物体の視覚情報を数値化する方法として、視覚情報の自己相関関数を計算する方法を考えた。自己相関関数とは1つのムービーについて、ある瞬間の映像が時間シフトした映像とどれだけ一致しているかという尺度である。自己相関関数を様々な粉粒体の落下映像について求めることとで、映像の変動を解析した。
 \subsection{画像処理について}
 物体の動きを正確に追うため本研究では二値化画像処理を用いている。二値化とは各画素について一定の閾値以下ならば白、そうでないならば黒にするという処理を施し、二色の画像を作成する処理である。運動する対象の色とギャップの大きい色を背景にして撮影し、二値化処理によって対象を白または黒で抜き出すことができる。 \par
