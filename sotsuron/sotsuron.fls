@@ -176,6 +176,15 @@ INPUT extractbb -O bb_image.png
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmr9.tfm
+INPUT getimage.py
+INPUT /usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT getimage.py
+INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti9.tfm
 INPUT 0.png
 INPUT extractbb -O 0.png
 INPUT 3.png
@@ -184,6 +193,16 @@ INPUT 0and3.png
 INPUT extractbb -O 0and3.png
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmmi9.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm
+INPUT getbw.cpp
+INPUT /usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT getbw.cpp
+INPUT /usr/share/texmf-dist/tex/latex/base/omlcmr.fd
+INPUT /usr/share/texmf-dist/tex/latex/base/omlcmr.fd
+INPUT /usr/share/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/share/texmf-dist/tex/latex/base/omscmr.fd
+INPUT andbw.py
+INPUT andbw.py
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT multi.png
 INPUT extractbb -O multi.png
@@ -201,4 +220,6 @@ INPUT water_two.png
 INPUT extractbb -O water_two.png
 INPUT water_line.png
 INPUT extractbb -O water_line.png
+INPUT cruz.cpp
+INPUT cruz.cpp
 INPUT sotsuron.aux
