@@ -1,15 +1,14 @@
 # Fdb version 3
-["dvipdf"] 1488467150 "sotsuron.dvi" "sotsuron.pdf" "sotsuron" 1488467152
-  "sotsuron.dvi" 1488467150 62704 0d7647d4000719ea9f677fc7f6e52153 "latex"
+["dvipdf"] 1488510316 "sotsuron.dvi" "sotsuron.pdf" "sotsuron" 1488510317
+  "sotsuron.dvi" 1488510316 64060 3878c8e0497ac6b9fec19c6120f165ca "latex"
   (generated)
   "sotsuron.pdf"
-["latex"] 1488467149 "sotsuron.tex" "sotsuron.dvi" "sotsuron" 1488467152
+["latex"] 1488510314 "sotsuron.tex" "sotsuron.dvi" "sotsuron" 1488510317
   "/usr/share/texmf-dist/fonts/map/fontname/texfonts.map" 1479649810 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm" 1479560679 468 53f854284f6afa6c36aaa2d1090ecc12 ""
   "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm" 1479560679 468 53f854284f6afa6c36aaa2d1090ecc12 ""
   "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm" 1479560679 856 7404843a5f798859944d7973a47821d5 ""
   "/usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tmin10.tfm" 1479560679 856 39c171483fe1bb7d0e1368980c0c205b ""
-  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1479649815 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmbx9.tfm" 1479649815 1328 5442e22a7072966dbaf88ca900acf3f0 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm" 1479649815 1524 4414a8315f39513458b80dfc63bff03a ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm" 1479649815 1512 f21f83efb36853c0b70002322c1ab3ad ""
@@ -26,6 +25,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1479649815 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1479649815 1120 8b7d695260f3cff42e636090a8002094 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmsy9.tfm" 1479649815 1116 25a7bf822c58caf309a702ef79f4afbb ""
+  "/usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1479649815 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/share/texmf-dist/fonts/tfm/public/cm/cmti9.tfm" 1479649815 1476 cccc6cc4935c18ec3d5623b77ecb8b74 ""
   "/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex" 1479649818 1006 b103be0bfc8c1682ff1fa9760697a329 ""
   "/usr/share/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.tex" 1479649818 43226 167a99346bfe2676e3efcdde2d81fe45 ""
@@ -137,15 +137,15 @@
   "listings.sty" 1488385227 80336 ff90c926c3d7bfdaa3d80ca57123b0bb ""
   "multi.png" 1487224098 66149 cbad401e5b3da7f90350291e666c1102 ""
   "one.png" 1487297554 30510 3e50ff412ecb1269da4546c41d60cd1c ""
-  "sotsuron.aux" 1488467150 3904 7569a6c8801b629b33f827ed05b35119 ""
-  "sotsuron.tex" 1488467147 22386 79e1422b2b9c7424d6148edacdc1f218 ""
-  "sotsuron.toc" 1488467150 1032 40b29bce1d25c5c3b2c4f0b4bd39637f ""
+  "sotsuron.aux" 1488510316 3973 c81bf8ea87c048b3a7eb1435b3c82f4e ""
+  "sotsuron.tex" 1488510311 23455 13043daa71581eb941a1d316afccb481 ""
+  "sotsuron.toc" 1488510316 1083 e1f450bb7438c7dd48f8f7458c14ae21 ""
   "three_up.png" 1488118390 44570 d58a170f065137d9533b12cf25d18f3e ""
   "two_big.png" 1488118152 28561 f1e090d3ab3806df7fc43962e73aabce ""
   "water_line.png" 1484277824 12683 7747b05da13b23f423faf846688c49bb ""
   "water_two.png" 1484277811 7172 55dbc19408af48d59ae43703cd5b4118 ""
   (generated)
-  "sotsuron.dvi"
   "sotsuron.log"
+  "sotsuron.dvi"
   "sotsuron.aux"
   "sotsuron.toc"

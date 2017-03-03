@@ -12,3 +12,4 @@
 \contentsline {subsection}{\numberline {3.5}グループ3の比較}{8}
 \contentsline {subsection}{\numberline {3.6}球(離散体)と粉(連続体)の相関減少の相違}{9}
 \contentsline {section}{\numberline {4}透過な物体の測定方法検討}{9}
+\contentsline {section}{\numberline {5}結論}{11}

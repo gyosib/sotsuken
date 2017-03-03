@@ -163,13 +163,14 @@ OUTPUT sotsuron.dvi
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss12.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
-INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/standard/tgoth10.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jisg.tfm
 INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmss10.tfm
 INPUT sotsuron.toc
 INPUT sotsuron.toc
+INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
+INPUT /usr/share/texmf-dist/fonts/tfm/ptex-fonts/jis/jis.tfm
 OUTPUT sotsuron.toc
 INPUT bb_image.png
 INPUT extractbb -O bb_image.png
@@ -203,7 +204,6 @@ INPUT /usr/share/texmf-dist/tex/latex/base/omscmr.fd
 INPUT /usr/share/texmf-dist/tex/latex/base/omscmr.fd
 INPUT andbw.py
 INPUT andbw.py
-INPUT /usr/share/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
 INPUT multi.png
 INPUT extractbb -O multi.png
 INPUT init.png
