@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016/Arch Linux) (preloaded format=platex 2016.12.6)  3 MAR 2017 12:05
+This is e-pTeX, Version 3.14159265-p3.7-160201-2.6 (utf8.euc) (TeX Live 2016/Arch Linux) (preloaded format=platex 2016.12.6)  4 MAR 2017 17:11
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -76,6 +76,10 @@ File: dvipdfmx.def 2016/07/11 v4.12 LaTeX color/graphics driver for dvipdfmx (L
 \Gin@req@height=\dimen126
 \Gin@req@width=\dimen127
 )
+(/usr/share/texmf-dist/tex/latex/comment/comment.sty
+\CommentStream=\write3
+
+Excluding comment 'comment')
 (/usr/share/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
 (/usr/share/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
@@ -116,7 +120,7 @@ Package: pgfsys 2014/07/09 v3.0.1a (rcs-revision 1.48)
 \pgf@yb=\dimen135
 \pgf@xc=\dimen136
 \pgf@yc=\dimen137
-\w@pgf@writea=\write3
+\w@pgf@writea=\write4
 \r@pgf@reada=\read1
 \c@pgf@counta=\count91
 \c@pgf@countb=\count92
@@ -394,6 +398,77 @@ Package: jlisting 2006/02/20 0.2 (Thor)
 \lst@nextchar=\count124
 \lst@inputfile=\read2
 )
+(/usr/share/texmf-dist/tex/latex/tools/rawfonts.sty
+Package: rawfonts 1994/05/08 Low-level LaTeX 2.09 font compatibility
+
+(/usr/share/texmf-dist/tex/latex/tools/somedefs.sty
+Package: somedefs 1994/06/01 v0.03 Toolkit for optional definitions
+)
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 46.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 4.805pt on input line 46.
+LaTeX Font Info:    Try loading font information for U+lasy on input line 49.
+
+(/usr/share/texmf-dist/tex/latex/base/ulasy.fd
+File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
+)
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 50.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 5.76599pt on input line 50.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 54.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 6.72699pt on input line 54.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 67.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 67.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 10.52292pt on input line 84.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 10.52292pt on input line 84.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 93.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 93.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 102.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 13.83836pt on input line 102.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 111.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 16.60605pt on input line 111.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 119.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 19.9311pt on input line 119.
+LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 123.
+LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
+(Font)              scaled to size 23.90964pt on input line 123.
+) (./flow.sty
+Package: flow 1989/09/05 v2.0 Flow macro's.
+\unitwidth=\dimen193
+\thentext=\box57
+\elsetext=\box58
+\savethentext=\box59
+\saveelsetext=\box60
+\unitheight=\dimen194
+\unitysize=\dimen195
+\unitxsize=\dimen196
+\unitspace=\dimen197
+\wa=\dimen198
+\ha=\dimen199
+\wb=\dimen256
+\hb=\dimen257
+\wda=\dimen258
+\hta=\dimen259
+\wdb=\dimen260
+\htb=\dimen261
+)
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
@@ -410,238 +485,150 @@ File: pgflibrarypatterns.code.tex 2008/03/03 v3.0.1a (rcs-revision 1.13)
 (./sotsuron.aux)
 \openout1 = `sotsuron.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
-LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 51.
-LaTeX Font Info:    ... okay on input line 51.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 57.
+LaTeX Font Info:    ... okay on input line 57.
  ABD: EveryShipout initializing macros
 \c@lstlisting=\count125
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 60.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 60.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 60.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 62.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 8.64899pt on input line 62.
+LaTeX Font Info:    Font shape `JT1/mc/m/it' in size <9> not available
+(Font)              Font shape `JT1/mc/m/n' tried instead on input line 63.
 LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 16.60605pt on input line 54.
+(Font)              scaled to size 8.64899pt on input line 63.
+LaTeX Font Info:    Font shape `JY1/mc/m/it' in size <9> not available
+(Font)              Font shape `JY1/mc/m/n' tried instead on input line 63.
 LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 16.60605pt on input line 54.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 54.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 54.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 54.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 54.
-LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 54.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 5.76599pt on input line 54.
+(Font)              scaled to size 8.64899pt on input line 63.
  [1
-
-
 
 ]
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 63.
+(Font)              scaled to size 9.60999pt on input line 72.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 11.53198pt on input line 63.
-LaTeX Font Info:    Font shape `JT1/mc/m/it' in size <10> not available
-(Font)              Font shape `JT1/mc/m/n' tried instead on input line 63.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 63.
-LaTeX Font Info:    Font shape `JY1/mc/m/it' in size <10> not available
-(Font)              Font shape `JY1/mc/m/n' tried instead on input line 63.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 63.
+(Font)              scaled to size 9.60999pt on input line 72.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 63.
+(Font)              scaled to size 13.83836pt on input line 72.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 9.60999pt on input line 63.
+(Font)              scaled to size 13.83836pt on input line 72.
  (./sotsuron.toc
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 2.
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <5> on input line 2.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 2.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 4.805pt on input line 2.
 )
-\tf@toc=\write4
-\openout4 = `sotsuron.toc'.
+\tf@toc=\write5
+\openout5 = `sotsuron.toc'.
 
 
 [2
 
-
-]
+] Excluding 'comment' comment.
+LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 95.
+LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
+(Font)              scaled to size 11.53198pt on input line 95.
 File: bb_image.png Graphic file (type bmp)
  <bb_image.png>
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 75.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 75.
- (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
+(/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
 )
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 6.72699pt on input line 79.
 LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JT1/gt/m/n' tried instead on input line 79.
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 104.
 LaTeX Font Info:    Font shape `JT1/gt/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 79.
+(Font)              scaled to size 8.64899pt on input line 104.
 LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
-(Font)              Font shape `JY1/gt/m/n' tried instead on input line 79.
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 104.
 LaTeX Font Info:    Font shape `JY1/gt/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 79.
-LaTeX Font Info:    Font shape `JT1/mc/m/it' in size <9> not available
-(Font)              Font shape `JT1/mc/m/n' tried instead on input line 79.
-LaTeX Font Info:    Font shape `JT1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 79.
-LaTeX Font Info:    Font shape `JY1/mc/m/it' in size <9> not available
-(Font)              Font shape `JY1/mc/m/n' tried instead on input line 79.
-LaTeX Font Info:    Font shape `JY1/mc/m/n' will be
-(Font)              scaled to size 8.64899pt on input line 79.
-
-Underfull \vbox (badness 4429) has occurred while \output is active []
-
+(Font)              scaled to size 8.64899pt on input line 104.
  [3
 
 ]
+Excluding 'comment' comment.
 File: 0.png Graphic file (type bmp)
-
-<0.png>
+ <0.png>
 File: 3.png Graphic file (type bmp)
  <3.png>
 File: 0and3.png Graphic file (type bmp)
  <0and3.png>
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 84--87
-[]
- []
-
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <9> on input line 87.
+(Font)              <9> on input line 118.
+
 (/usr/share/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-)
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 92.
+) [4]
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 123.
+
 
 (/usr/share/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 92.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 92.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 123.
+ [5]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 123.
+
 
 (/usr/share/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 123.
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <9> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 92.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 123.
+ [6]
 LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 95.
-
-Underfull \vbox (badness 1622) has occurred while \output is active []
-
- [5]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 126.
+ [7] [8] [9] [10]
 File: multi.png Graphic file (type bmp)
 
-<multi.png>
-Overfull \hbox (28.61975pt too wide) in paragraph at lines 145--146
-[][] 
- []
-
-[6]
+<multi.png> [11]
 File: init.png Graphic file (type bmp)
- <init.png>
-Overfull \hbox (29.82423pt too wide) in paragraph at lines 154--155
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+ <init.png> [12]
 File: diff.png Graphic file (type bmp)
-
-<diff.png>
-Overfull \hbox (15.37045pt too wide) in paragraph at lines 177--178
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [7]
+ <diff.png> [13]
 File: one.png Graphic file (type bmp)
-
-<one.png>
-Overfull \hbox (23.80182pt too wide) in paragraph at lines 204--205
-[][] 
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
+ <one.png>
 File: two_big.png Graphic file (type bmp)
-
-<two_big.png>
-Overfull \hbox (22.19585pt too wide) in paragraph at lines 211--212
-[][] 
- []
-
+ <two_big.png>
+[14]
 File: three_up.png Graphic file (type bmp)
-<three_up.png>
-Overfull \hbox (22.19585pt too wide) in paragraph at lines 218--219
-[][] 
- []
-
-[8]
+ <three_up.png> [15] [16]
 File: water_two.png Graphic file (type bmp)
  <water_two.png>
 File: water_line.png Graphic file (type bmp)
- <water_line.png>
-Underfull \hbox (badness 10000) in paragraph at lines 237--239
-[][]
- []
+ <water_line.png> [17] [18]
+File: compareline.png Graphic file (type bmp)
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [9]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [10]
-[11
-
-] (./sotsuron.aux) ) 
+<compareline.png> [19] [20] (./sotsuron.aux) ) 
 Here is how much of TeX's memory you used:
- 12899 strings out of 493682
- 251771 string characters out of 6154347
- 456141 words of memory out of 5000000
- 16215 multiletter control sequences out of 15000+600000
- 15782 words of font info for 69 fonts, out of 8000000 for 9000
+ 13153 strings out of 493682
+ 254757 string characters out of 6154347
+ 422671 words of memory out of 5000000
+ 16435 multiletter control sequences out of 15000+600000
+ 27800 words of font info for 122 fonts, out of 8000000 for 9000
  934 hyphenation exceptions out of 8191
- 55i,10n,59p,860b,1731s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,21n,59p,845b,1803s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on sotsuron.dvi (11 pages, 64060 bytes).
+Output written on sotsuron.dvi (20 pages, 69952 bytes).

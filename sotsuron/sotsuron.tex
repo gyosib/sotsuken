@@ -1,10 +1,16 @@
-\documentclass[a4paper,10pt,twocolumn,dvipdfmx]{jsarticle}
-%\documentclass[a4paper,10pt,dvipdfmx]{jsarticle}
+%\documentclass[a4paper,12pt,twocolumn,dvipdfmx,Flow]{jsarticle}
+\documentclass[a4paper,12pt,dvipdfmx]{jsarticle}
 \usepackage[dvipdfmx]{graphicx}
+\usepackage{comment}
 \usepackage{tikz}
 \usepackage{here}
 \usepackage{array,booktabs}
 \usepackage{listings,jlisting}
+\usepackage{rawfonts,flow}
+
+\makeatletter
+\g@addto@macro\@floatboxreset\centering
+\makeatother
 
 \lstset{%
   language={C},
@@ -52,21 +58,40 @@
 %\onecolumn{
 
 \maketitle
-\twocolumn[
+%\twocolumn[
 \begin{abstract}
 The texture is great importance to the sense of sight.But we can't explain simply the texture.So it is considered to "{\it tacit dimension}, Michael Polany".In recent years, however, analysis of short time have become possible with high-speed camera.Thus, this field came to study.Analysis was done hitherto by sight.In this study, I analyze the motion of spheres, powders and liquid by binarization-centered image processing to detect the location and size of the particle and calculate autocorrelation functions meaning the time-shift degree of similarity of the change of position .I compare functions and motion to connect them. \par
 The most importance factor is the time which the value decline and remainin value.They depend on the particle size.On top of that, one particle is like another particle that the diameter is neary.In conclusion, we recognize this extremely short time to differentiate kind of particles or liquid.In particular, powders appearing like liquid have shorter decline time like water.On balance, analysis of the motion to caliculate autocorrelation function is avaiable to digitize the texture.
 \end{abstract}
 %}
-
-\tableofcontents
-]
+%]
 
 \clearpage
 
-\section{物体の運動評価法}
+%\twocolumn[
+\tableofcontents
+%]
+
+\clearpage
+
+\section{物体流動の解析法}
 %\lstinputlisting[caption=hoge,label=hoge]{"test.txt"}
-物体の視覚情報を数値化する方法として、視覚情報の自己相関関数を計算する方法を考えた。自己相関関数とは1つのムービーについて、その映像がある時間だけシフトしたとき、それとどれくらい一致しているかという尺度である。自己相関関数を様々な粉粒体の落下映像について求めることとで、映像の変動を解析した。
+\begin{comment}
+\scriptsize
+\STRUCT{struct name}{structure purpose}{%
+	\ACTION{init}%
+	\IF{if\\ to test}%
+	\THEN{%
+		\ACTION{action}%
+	}%
+	\ELSE{%
+		\ACTION{action2}%
+	}%
+	\ENDIF%
+}%
+\normalsize
+\end{comment}
+全く別の印象を受ける球と粉、水の運動(流動)の相違点の1つとして定常性の差が挙げられる。定常性は映像をタイムシフトさせたときにどれくらい整合性があるかという尺度に等しい。これを自己相関関数として計算することにより解析を行った。
 \subsection{画像処理について}
 物体の動きを正確に追うため本研究では二値化画像処理を用いている。二値化とは各画素について一定の閾値以下ならば白、そうでないならば黒にするという処理を施し、二色の画像を作成する処理である。運動する対象の色とギャップの大きい色を背景にして撮影し、二値化処理によって対象を白または黒で抜き出すことができる。 \par
 二値化処理を施した画像の例としてFig\ref{fig:threshold}を示す。
@@ -78,7 +103,13 @@ The most importance factor is the time which the value decline and remainin valu
 本研究では解析の開発も行った。用いた言語はC++とPythonである。画像処理に関わるソースコードをCode \ref{code:two}に示す。画像処理にはOpenCVライブラリを用いている。Code \ref{code:two}は粉粒体の落下運動の動画からフレームを切り抜き、トリミングおよび二値化処理を行うプログラムである。そして、トリミング画像・二値化画像・2つを並べた画像の3種類を各フレームごとにナンバリングして保存する。二値化を行うthreshold関数は閾値を引数に持つ(ここでは33となっている)。これはピクセルを黒に変換する境界で、閾値を低くすればするほど二値化画像は黒の割合が高くなる。
 \lstinputlisting[caption=動画のフレーム切り抜きと二値化,label={code:two},language=Python]{"getimage.py"}
 \subsection{相関関数の評価方法}
-まず画像間の類似性というものを考える。ここで類似性とは同一時系列上にある2つの画像がどれだけ似ているかという意味で用いているが、まずは類似性の数値化を試みた。そのためには類似性の具体的な定義を行う必要がある。本研究では次のように定義した、「画像間で色が一致しているピクセルの数[px]」。イメージ画像をFig\ref{fig:exfall}に示す。比較する際にまずベースフレーム($t_0$時点)を一つ決める。次に$t_0+\Delta t$後の画像と比較する。色が一致するピクセル数を$S(\Delta t)$と表すことにする。$S(0)$は同じ画像同士の比較なので完全に一致するため、$S(0)$は比較画像のピクセル数に等しい。$\Delta t$が少しずれて、例えば$S(\frac{1}{5000})$のようになると$S(0)$よりも少し小さくなる。これを$0 \leq \Delta t \leq 0.1 [s]$の範囲で計算する。なお落下運動は定常なものであるため、$t_0$を適当に20点選び平均をとっている。 \par
+%まず画像間の類似性というものを考える。ここで類似性とは同一時系列上にある2つの画像がどれだけ似ているかという意味で用いているが、まずは類似性の数値化を試みた。そのためには類似性の具体的な定義を行う必要がある。本研究では次のように定義した、「画像間で色が一致しているピクセルの数[px]」。イメージ画像をFig\ref{fig:exfall}に示す。比較する際にまずベースフレーム($t_0$時点)を一つ決める。次に$t_0+\Delta t$後の画像と比較する。色が一致するピクセル数を$S(\Delta t)$と表すことにする。$S(0)$は同じ画像同士の比較なので完全に一致するため、$S(0)$は比較画像のピクセル数に等しい。$\Delta t$が少しずれて、例えば$S(\frac{1}{5000})$のようになると$S(0)$よりも少し小さくなる。これを$0 \leq \Delta t \leq 0.1 [s]$の範囲で計算する。なお落下運動は定常なものであるため、$t_0$を適当に20点選び平均をとっている。 \par
+前述したように自己相関関数とは映像の定常性を表す尺度である。1変数関数$f(t)$には一つのtに対して1つの値が対応するのに対し、映像には1つの画像(フレーム)が対応する。1変数関数の整合性を求めるとき、元信号の値とタイムシフト後の信号の値を比べることになる。この考えを映像に拡張する。すなわち元映像のある時間の画像とタイムシフト後の同じ時間の画像を比較し、その類似性を計算ればよい。画像の類似性は2つの画像をピクセル単位で見たときに色が一致しているピクセルが何個あるかという指標で表せる。精度を考えれば元信号と重なっている範囲全てを網羅すべきであるが、画像処理は重い処理なため元信号から適当な20点を選び、タイムシフトは0〜0.1秒に限定している。
+\begin{comment}
+\begin{equation}
+	\cos (\vec{q} ,\vec{d}) = \frac{\vec{q} ・ \vec{d}}{|\vec{q}| ・ |\vec{d}|}
+\end{equation}
+\end{comment}
 $S(0 \leq \Delta t \leq 0.1)をS(0)$の値で割り、規格化した値を自己相関関数$G(\Delta t)$とする。$S(\Delta t)の範囲が0 \leq S(\Delta t) \leq S(0)であるから、相関関数G(\Delta t)の値域は0 \leq G(\Delta t) \leq 1となる$。
 \begin{figure}[hbtp]
 	\includegraphics[clip,width=7.0cm]{0.png}
@@ -93,10 +124,64 @@ Code \ref{code:txt}は二値化画像を元にテキストファイルを作成�
 Code \ref{code:count}はCode \ref{code:txt}によって作成されたテキストファイルを元にして重複ピクセルをカウント、自己相関関数の計算を行うプログラムである。ベースフレームと比較するフレームの各ピクセル情報を比較し一致すればカウントを+1するといった処理を行っている。基準とするベースフレームの数は20個、1つのベースフレームに対して501フレーム(0.1秒間分)の比較を行っている。保存する値は比較するフレーム数と同じ501個である。つまり、1回目のベースフレームとの比較により501個分のカウント($S(\Dt):S(0)〜S(500)$)ができるが、2回目以降はこのカウントに累積させていくことになる。
 全てのフレームについて比較とカウントを行った後に正規化処理を行っている。正規化時点で1つのカウントには比較20回分の値が保存されている。これら501個分のカウントをベースフレーム同士の比較$S(0)$で除する。これにより$S(0)=1$以降1以下の値が500個続く。これらの値を自己相関関数として出力する。
 \lstinputlisting[caption=重複ピクセルカウント,label={code:count},language=Python]{"andbw.py"}
-\subsection{相関関数の評価方法}
+\begin{figure}
+%\begin{flushleft}
+\begin{tabular}{cc}
+\begin{minipage}[t]{0.45\hsize}
+\scriptsize
+\setiftext{yes}{no}
+\STRUCT{andbw}{自己相関関数を求めるアルゴリズム}{%
+    \ACTION{c[t:0-500]=all0}%
+    \ACTION{i=0}%
+	\REPEAT{%
+      \ACTION{t=0}%
+	  \ACTION{ベースフレーム(0+i*30.png)を習得}%
+	  \ACTION{i++}%
+	  \REPEAT{%
+	    \ACTION{比較フレーム(i+t.png)と比較\\(右参照)}%
+	  }%
+      \ACTION{t++}%
+	  \UNTIL{$t \geq 500$}%
+	}%
+	\UNTIL{$i > 20$}%
+	\ACTION{cを規格化}%
+}%
+\normalsize
+%\end{flushleft}
+\end{minipage}&
+\begin{minipage}[t]{0.45\hsize}
+%\begin{comment}
+%\begin{flushright}
+\scriptsize
+\setiftext{yes}{no}
+\STRUCT{andbw}{ピクセルをカウントするアルゴリズム}{%
+  \ACTION{j=0}%
+  \REPEAT{%
+    \ACTION{j番目のピクセル同士を比較}%
+	\IF{色が一致}%
+      \THEN{%
+        \ACTION{c[t]++}%
+      }%
+      \ELSE{%
+      }%
+    \ENDIF%
+	\ACTION{j++}%
+  }%
+  \UNTIL{全てのピクセルについて探査終了}%
+}%
+\normalsize
+%\end{flushright}
+%\end{comment}
+\end{minipage}
+\end{tabular}
+\label{fig:auto_flow}
+\caption{自己相関計算プログラムのフローチャート}
+\end{figure}
 
-\section{測定方法}
-測定に用いるのは落下装置とハイスピードカメラである。落下装置はダンボール箱を加工したもので、光を通したり撮影したりするための穴や物体を充填する漏斗とストッパーで構成されている。装置とカメラの距離は70 cmとし、カメラに映っている範囲で物体の落下速度は約2 m/sとなるようにしている。
+\section{実験と結果}
+\subsection{撮影環境}
+測定に用いるのは落下装置とハイスピードカメラである。落下装置はダンボール箱を加工したもので、光を通したり撮影したりするための穴や物体を充填する漏斗とストッパーで構成されている。装置とカメラの距離は70 cmとし、カメラに映っている範囲で物体の落下速度は約2 m/sとなるようにしている。また、カメラのシャッタースピードは5000 fps($\frac{1}{5000}秒に1回$)、露光時間は$\frac{1}{80000}秒$である。 \par
+本研究においてほとんどの物体は黒背景にして白色で抜き出している。これは物体にライトを当てることによって物体が白っぽく映るためであるが、金属球については反射によって色のむらができてしまうため、白背景にして後ろから光を当てることにより黒で抜き出している。
 \subsection{物体の種類}
 本研究で測定した物体はTable\ref{tb:ballkind}に示す7種類である。 \\
 \begin{table}[H]
@@ -118,12 +203,9 @@ Code \ref{code:count}はCode \ref{code:txt}によって作成されたテキス�
 \end{table}
 
 Table\ref{tb:ballkind}で金属球、BB弾、発泡ポリスチレンは実際に測定したものだが、砂と海砂については表記されたメッシュ値を参考におおよその直径を決めている。 \par
-カメラのシャッタースピードは5000 fps($\frac{1}{5000}秒に1回$)、露光時間は$\frac{1}{80000}秒$である。 \par
-本研究においてほとんどの物体は黒背景にして白色で抜き出している。これは物体にライトを当てることによって物体が白っぽく映るためであるが、金属球については反射によって色のむらができてしまうため、白背景にして後ろから光を当てることにより黒で抜き出している。
 
-\section{各物体の評価}
-\subsection{相関関数}
-実験で得られた各物体の相関関数を下記にまとめる。なお、グラフ中の略称についてはTable\ref{tb:ballname}を参照のこと。Fig\ref{fig:overall}に0.1秒間の自己相関関数の変化を示す。砂や水といった物質は比較的相関が減少していないことがわかる。これらの物体は人の目から見ても帯状に連なって落ちていることがわかる。すなわち、粒ひとつひとつが独立して動くことがなく、なだらかな動きを見せるのである。このような場合撮影したどのフレームを見ても形は大きく変わっていない。 \par
+\subsection{事故相関関数}
+実験で得られた各物体の相関関数を下記にまとめる。なお、グラフ中の略称についてはTable\ref{tb:ballname}を参照のこと。また、Fig\ref{fig:overall}に0.1秒間の自己相関関数の変化を示す。 \par
 \begin{table}[H]
 	\caption{粉粒体の略称 \label{tb:ballname}}
 	\begin{tabular}{lr}
@@ -141,14 +223,15 @@ Table\ref{tb:ballkind}で金属球、BB弾、発泡ポリスチレンは実際�
 		\bottomrule
 	\end{tabular}
 \end{table}
+自己相関関数は総じてはじめに減少し、その後傾きが小さくなり場合によってはほぼ一定の値を保っていることがわかる。 \par
 \begin{figure}[H]
 	\includegraphics[scale=0.4]{multi.png}
 	\caption{各物体の相関関数}
 	\label{fig:overall}
 \end{figure}
-多くの場合において初期状態($G(0)=1$,完全一致)から急激な減少が起こっていることがわかる。$0 \leq \Delta t \leq 4 [ms]$を拡大したグラフがFig\ref{fig:init}である。このグラフの結果から各粉粒体を3つのグループに分類した。第1グループは粒径6 mmを超えるものである。金属球(Metal)とBB弾(BB)がこれに当たる。グループ1はFig\ref{fig:init}の範囲において2つの期間に分かれている。1つは$0 \leq \Dt \leq 2.5$にある相関が減少する区間である。これを区間Iと呼ぶ。もう1つはほぼ相関が一定になる区間\II である。2つの区間には明確な境界があり、2.5〜2.8 msと見られる。また区間\II については他のグループよりも振動が大きい。振動が大きい理由としては球が離散体として運動するため、確率的にベースフレームとほとんど一致しないフレームがあるからである。 \par
+$0 \leq \Delta t \leq 4 [ms]$を拡大したグラフがFig\ref{fig:init}である。このグラフの結果から各粉粒体を3つのグループに分類した。第1グループは粒径6 mmを超えるものである。金属球(Metal)とBB弾(BB)がこれに当たる。グループ1はFig\ref{fig:init}の範囲において2つの期間に分かれている。1つは$0 \leq \Dt \leq 2.5$にある相関が減少する区間である。これを区間Iと呼ぶ。もう1つはほぼ相関が一定になる区間\II である。2つの区間には明確な境界があり、2.5〜2.8 msと見られる。また区間\II については他のグループよりも振動が大きい。振動が大きい理由としては球が離散体として運動するため、確率的にベースフレームとほとんど一致しないフレームがあるからである。 \par
 これよりも小さく粒径1 mm以上のものをグループ2とする。発泡ポリスチレン(EPS)と砂15-20メッシュ(sand1520)が含まれる。このグループについてもグループ1と同様2つの区間が見られるが、区間Iの時間がグループ1よりも短くなっている。境界は1 msあたりである。 \par
-最後に残りをグループ3とする。これらは粒径が1 mmに満たない粒子径もしくは液体である。グループ3は特に海砂以下については区間Iが消失しているように見える。砂(20-30メッシュ)に関しては0.5 ms付近に境界があることが確認できるので、境界が見られない粉粒体については、より短い間隔で撮影を行うことで区間Iを発見することができると思われる。\par
+最後に残りをグループ3とする。これらは粒径が1 mmに満たない粒もしくは液体である。グループ3は特に海砂以下については区間Iが消失しているように見える。砂(20-30メッシュ)に関しては0.5 ms付近に境界があることが確認できるので、境界が見られない粉粒体については、より短い間隔で撮影を行うことで区間Iを発見することができると思われる。\par
 区間Iと区間\II の境界を「相関持続時間$t_c$」とする。目視の範囲でわかる$t_c$をTable\ref{tb:tc_eye}にまとめる。
 \begin{figure}[H]
 	\includegraphics[scale=0.4]{init.png}
@@ -172,7 +255,7 @@ Table\ref{tb:ballkind}で金属球、BB弾、発泡ポリスチレンは実際�
 
 \subsection{微分を用いた相関持続時間$t_c$の算出}
 前述したように相関持続時間$t_c$は目視により大体の検討をつけることができるが、軸の縮尺等によって見え方は変わってくる。そこで、見た目という定性的な分析法ではなく、微分を用いて定量的に$t_c$を求めた。Fig\ref{fig:diff}は自己相関関数を時間差で微分したグラフである。 \par
-自己相関関数は区間Iでは負の傾きを持つが、区間\II は0に近い傾きで振動する。そのため微分$\frac{dG(\Dt)}{\Dt}$で0付近になるときの時間差$\Dt がt_c$と一致すると考えられる。
+自己相関関数は区間Iでは負の傾きを持つが、区間\II は0に近い傾きで振動する。そのため微分$\frac{dG(\Dt)}{d\Dt}$で0付近になるときの時間差$\Dt がt_c$と一致すると考えられる。
 \begin{figure}[H]
 	\includegraphics[scale=0.4]{diff.png}
 	\caption{各物体の相関関数の微分}
@@ -206,22 +289,23 @@ Table\ref{tb:ballkind}で金属球、BB弾、発泡ポリスチレンは実際�
 	\label{fig:one}
 \end{figure}
 \subsection{グループ2の比較}
-グループ2の発泡ポリスチレンと砂(15-20メッシュ)は微分後の形を見ても明らかなように粒径が細かい砂の方が相関減少時間が短い。その結果砂のほうが区間\II 時点の値は大きい。このグループのように落下粉粒体を連続体として捉えることができる場合、相関減少は連続体の帯のヘリとその周辺の変化を表している。すなわち相関減少がより少ない砂は発泡ポリスチレンよりもヘリの変化が少ないということが言える。
+グループ2の発泡ポリスチレンと砂(15-20メッシュ)は微分後の形を見ても明らかなように粒径が細かい砂の方が相関減少時間が短い。その結果砂のほうが区間\II の値は大きい。このグループのように落下粉粒体を連続体として捉えることができる場合、相関減少は連続体の帯のヘリとその周辺の変化を表している。すなわち相関減少がより少ない砂は発泡ポリスチレンよりもヘリの変化が少ないということが言える。
 \begin{figure}[H]
 	\includegraphics[scale=0.4]{two_big.png}
 	\caption{グループ2の自己相関関数}
 	\label{fig:two}
 \end{figure}
 \subsection{グループ3の比較}
-グループ3の自己相関関数の形はそれぞれ個性的な形をしている。まず、砂(20-30メッシュ)はグループ1,2の傾向を引き継ぎ、相関減少時間を0.5 msと短くし、以降相関をほぼ一定に保っている。この区間分けができるのは砂(20-30メッシュ)までとなる。まず1つ細かい海砂には区間\II が見られず、解析限界の100 ms, G=0.92まで緩やかに減少を続けている。60 ms付近でグループ2の相関を追い抜いている。ただし減少速度は8つの中でも遅いため4 msという短い間隔で見れば典型的なグループ3として分類できる。ガラスビーズや水の相関には再び2つの区間が現れる。しかも5～6 msというグループ1よりも長い時間減少する。ガラスビーズと水についても海砂と同じく相関は0.95以上という高い値を保っている。
+グループ3の自己相関関数の形はそれぞれ特徴のある形をしている。まず、砂(20-30メッシュ)はグループ1,2の傾向を引き継ぎ、相関減少時間を0.5 msと短くし、以降相関をほぼ一定に保っている。この砂(20-30メッシュ)までが区間分けができる粒径となる。その次に細かい海砂には区間\II が見られず、100 ms, G=0.92まで緩やかに減少を続けている。また、60 ms付近でグループ2の相関を追い抜いている。ただし減少速度は8つの中でも小さいため4 msという短い間隔で見ればグループ3として分類できる。ガラスビーズや水の相関には再び2つの区間が現れる。しかも5～6 msというグループ1よりも長い時間減少時間を持つ。ガラスビーズと水についても海砂と同じく相関は0.95以上という高い値を保っている。
 \begin{figure}[H]
 	\includegraphics[scale=0.4]{three_up.png}
 	\caption{グループ3の自己相関関数}
 	\label{fig:three}
 \end{figure}
 \subsection{球(離散体)と粉(連続体)の相関減少の相違}
-グループ3における相関減少時間と相関減少速度から海砂以下について次の予測が立てられる。粒径が小さくなると一旦相関減少時間は長くなるということである。そもそもグループ1に代表される離散体の相関減少区間は、初期位置からの球1つ分の移動を表していた。これはグループ2から少し意味が変わってくる。グループ2より粒径が細かくなると映像に帯、すなわち連続体の部分が現れるのである。連続体部分の相関減少はヘリの小さな変化に起因している。つまりグループ2の相関減少は離散体と連続体両方の要素を含んでいる。そしてグループ3には連続体のみが写っている。連続体の変化は離散体よりもずっと小さいため相関減少速度も小さくなる。そのためグループ1よりも減少時間が長くなるものと考えられる。ただし、減少が緩やかな分区間\II との区別がつきづらくなる。本研究では、減少後の相関値が高いため、全体的な傾向としてグループ3は相関減少時間が0.5 ms以下で曖昧または消失したものとしてまとめている。
-\section{透過な物体の測定方法検討}
+グループ3における相関減少時間と相関減少速度から海砂以下について次の予測が立てられる。粒径がある程度小さくなると相関減少時間は長くなるということである。そもそもグループ1に代表される離散体の相関減少区間は、初期位置からの球1つ分の移動を表していた。それがグループ2で少し意味が変わり、粒径が細かくなると映像に帯、すなわち連続体の部分が現れる。連続体部分の相関減少はヘリの小さな変化に起因している。つまりグループ2の相関減少は離散体と連続体両方の要素を含んでいる。さらにグループ3には変化の小さい連続体のみが写っているため、相関減少速度も小さくなる。そのためグループ1よりも減少時間が長くなるものと考えられる。ただし減少が緩やかな分減少量は小さく、保持される相関値が高くなるため、区間\II との区別がつきづらくなる。本研究では、減少量が小さいためこの祖間減少は無視し、相関減少時間が0.5 ms以下で曖昧または消失したグループ3としてまとめている。
+\section{透明な物体の測定}
+\subsection{透明な球・液体の解析方法}
 自己相関関数の計算には二値化画像処理が不可欠である。二値化する条件は被写体と背景の色のギャップが大きいことである。しかし、透明な物体は背景を透過するため二値化に十分なギャップを作ることができない。そこで、別な方法により二値化に似た処理を提案する。 \par
 今回注目したのは透明な物体が背景を透過するとき、完全に背景を映し出さないという性質である。つまり透明な物体であっても多くの場合背景が歪んで見え、その物体を認識することができる。これを利用して背景の歪みを検出するプログラムを作成した。この測定法には背景に方眼紙(Fig\ref{fig:block})を用いる。
 \begin{figure}[H]
@@ -241,6 +325,13 @@ Fig\ref{fig:block}を背景にし、透明な物体を落下運動させる。�
 \end{figure}
 Code \ref{code:line}に線分検出プログラムを示す。本プログラムは疑似二値化画像の作成を目的としている。関数getlineが実際に線分を検出している。getlineではまず対象画像を読み込んだ後、白色画像を作成している。次に線分をHough変換によって検出している。これにより線分の場所や長さを座標という形で得ることができる。この座標を元に白色画像に検出した線分の位置をなぞるように線分を描画する。この線分の太さを適当に太くすると線分の位置周辺が黒く塗りつぶされる。これを検出した線分全てに行う。線分が見えている周辺は透明物体が通っていない=背景なので、最終的に背景のおおよそが黒く塗りつぶされることになる。
 \lstinputlisting[caption=線分検出,label={code:line},language=C++]{"cruz.cpp"}
+\subsection{結果}
+結果をFig \ref{fig:compare}に示す。図は絵の具で着色した水を通常の方法で解析したものと線分を検出することによって解析したものの比較である。線分の方法だと全体的に相関が小さく算出される。これは線分を完全に検出できず、背景であっても白い部分があるからである。$G(0)=1$は共通なので、直後に急激な相関減少が現れている。着色したものでは6 ms以降で相関減少が落ち着くが、線分検出の方はばらつきが大きく、評価は難しい。それでも4 ms以降は比較的落ち着きが見えるため、ある程度は解析ができているものと思われる。
+\begin{figure}[H]
+	\includegraphics[scale=0.4]{compareline.png}
+	\caption{線分検出法}
+	\label{fig:compare}
+\end{figure}
 \section{結論}
 二値化を用いて流動映像を解析し、自己相関関数を求めることで粒径と流動の外観に関係性があることがわかった。粒径が細かいほど映像の定常性は高くなり、連続体として観測される。また、細かい粉体の流動映像は数値から見ても液体のものと酷似しており、これが見分けがつきにくい要因となっている。しかし、液体は相関の減少が他の粉体よりも緩やかであるため、その僅かな時間の違いから両者を見分けることができる場合もあると考えられる。
 \end{document}
