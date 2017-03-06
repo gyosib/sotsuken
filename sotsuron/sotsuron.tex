@@ -1,5 +1,8 @@
 %\documentclass[a4paper,12pt,twocolumn,dvipdfmx,Flow]{jsarticle}
-\documentclass[a4paper,12pt,dvipdfmx]{jsarticle}
+\documentclass[a4j,12pt,dvipdfmx]{jsarticle}
+%\AtBeginDvi{\special{pdf:mapfile sotsuron.map}}
+\RequirePackage{fix-cm}
+\usepackage[top=35mm,bottom=30mm,left=30mm,right=20mm]{geometry}
 \usepackage[dvipdfmx]{graphicx}
 \usepackage{comment}
 \usepackage{tikz}
@@ -7,6 +10,14 @@
 \usepackage{array,booktabs}
 \usepackage{listings,jlisting}
 \usepackage{rawfonts,flow}
+%\usepackage{pxchfon}
+\usepackage{color}
+\usepackage{jtygm}
+
+%\setminchofont{ipam.ttf}
+%\setgothicfont{ipag.ttf}
+%\setminchofont{TanukiMagic.ttf}
+%\setgothicfont{TanukiMagic.ttf}
 
 \makeatletter
 \g@addto@macro\@floatboxreset\centering
@@ -35,11 +46,18 @@
 \renewcommand{\lstlistingname}{Code}% Listing -> Algorithm
 \renewcommand{\figurename}{Fig}% Listing -> Algorithm
 \renewcommand{\tablename}{Table}% Listing -> Algorithm
+\renewcommand{\abstractname}{\flushleft\textbf{\fontsize{12pt}{30pt}\selectfont Abstract}\hfill}
 
 \usetikzlibrary{patterns}
 
 \newcommand{\Dt}{\Delta t}
 \newcommand{\II}{I\hspace{-.1em}I}
+\newcommand{\maru}[1]{\ooalign{
+\hfil\resizebox{.8\width}{\height}{#1}\hfil
+\crcr
+\raise.1ex\hbox{\large$\bigcirc$}}}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+  \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 
 \title{二値化画像処理による \\ 粉粒体高速流動の画像情報の統計的処理}
 %Comparative evaluation of autocorrelation function of time-dependent configuration of particulate/powdery systems in fast translational motion and the velocity of the apparent motion of them
@@ -57,11 +75,53 @@
 \begin{document}
 %\onecolumn{
 
-\maketitle
+%\maketitle
+\begin{center}
+\fontsize{22pt}{30pt}\selectfont
+\textcolor{white}{卒業研究報告書}
+
+卒\quad 業\quad 研\quad 究\quad 報\quad 告\quad 書
+\\[7pt]
+\fontsize{20pt}{30pt}\selectfont
+\hrulefill \\
+\begin{flushleft}
+課題タイトル
+
+二値化画像処理による粉粒体高速流動の\\ 画像情報の統計的処理
+\\[14pt]
+tochastic characterization method \\
+for motion pictures \\
+of flowing powdery or granular matters \\
+By vision binarization 
+\\[7pt]
+\end{flushleft}
+\hrulefill
+\\[15pt]
+平成28年度
+
+\fontsize{18pt}{20pt}\selectfont
+\begin{flushleft}
+福島工業高等専門学校
+\end{flushleft}
+
+学科名　物質工学科　42番　吉渡匠汰
+%
+%\textcolor{white}{学科名　物質工学科　42}番\textcolor{white}{　吉渡匠汰}
+%
+%\textcolor{white}{学科名　物質工学科　42}番\textcolor{white}{　吉渡匠汰}
+\\[36pt]
+指導教員　　車田研一　　\circled{{\large 印}}
+\end{center}
+
+\clearpage
+
 %\twocolumn[
+\clearpage
+\fontsize{12pt}{15pt}\selectfont
 \begin{abstract}
-The texture is great importance to the sense of sight.But we can't explain simply the texture.So it is considered to "{\it tacit dimension}, Michael Polany".In recent years, however, analysis of short time have become possible with high-speed camera.Thus, this field came to study.Analysis was done hitherto by sight.In this study, I analyze the motion of spheres, powders and liquid by binarization-centered image processing to detect the location and size of the particle and calculate autocorrelation functions meaning the time-shift degree of similarity of the change of position .I compare functions and motion to connect them. \par
-The most importance factor is the time which the value decline and remainin value.They depend on the particle size.On top of that, one particle is like another particle that the diameter is neary.In conclusion, we recognize this extremely short time to differentiate kind of particles or liquid.In particular, powders appearing like liquid have shorter decline time like water.On balance, analysis of the motion to caliculate autocorrelation function is avaiable to digitize the texture.
+\fontsize{12pt}{15pt}\selectfont
+The texture is great importance to the sense of sight. But we can't explain simply the texture. So it is considered to "{\it tacit dimension}, Michael Polany". In recent years, however, analysis of short time have become possible with high-speed camera. Thus, this field came to study. Analysis was done hitherto by sight\cite{sight1} \cite{sight2}. In this study, I analyze the motion of spheres, powders and liquid by binarization-centered image processing to detect the location and size of the particle and calculate autocorrelation functions meaning the time-shift degree of similarity of the change of position . I compare functions and motion to connect them.  \par
+The most importance factor is the time which the value decline and remainin value\cite{first}. They depend on the particle size. On top of that, one particle is like another particle that the diameter is neary. In conclusion, we recognize this extremely short time to differentiate kind of particles or liquid. In particular, powders appearing like liquid have shorter decline time like water. On balance, analysis of the motion to caliculate autocorrelation function is avaiable to digitize the texture. 
 \end{abstract}
 %}
 %]
@@ -303,7 +363,7 @@ $0 \leq \Delta t \leq 4 [ms]$を拡大したグラフがFig\ref{fig:init}であ�
 	\label{fig:three}
 \end{figure}
 \subsection{球(離散体)と粉(連続体)の相関減少の相違}
-グループ3における相関減少時間と相関減少速度から海砂以下について次の予測が立てられる。粒径がある程度小さくなると相関減少時間は長くなるということである。そもそもグループ1に代表される離散体の相関減少区間は、初期位置からの球1つ分の移動を表していた。それがグループ2で少し意味が変わり、粒径が細かくなると映像に帯、すなわち連続体の部分が現れる。連続体部分の相関減少はヘリの小さな変化に起因している。つまりグループ2の相関減少は離散体と連続体両方の要素を含んでいる。さらにグループ3には変化の小さい連続体のみが写っているため、相関減少速度も小さくなる。そのためグループ1よりも減少時間が長くなるものと考えられる。ただし減少が緩やかな分減少量は小さく、保持される相関値が高くなるため、区間\II との区別がつきづらくなる。本研究では、減少量が小さいためこの祖間減少は無視し、相関減少時間が0.5 ms以下で曖昧または消失したグループ3としてまとめている。
+グループ3における相関減少時間と相関減少速度から海砂以下について次の予測が立てられる。粒径がある程度小さくなると相関減少時間は長くなるということである。そもそもグループ1に代表される離散体の相関減少区間は、初期位置からの球1つ分の移動を表していた。それがグループ2で少し意味が変わり、粒径が細かくなると映像に帯、すなわち連続体の部分が現れる。連続体部分の相関減少はヘリの小さな変化に起因している。つまりグループ2の相関減少は離散体と連続体両方の要素を含んでいる。さらにグループ3には変化の小さい連続体のみが写っているため、相関減少速度も小さくなる。そのためグループ1よりも減少時間が長くなるものと考えられる。ただし減少が緩やかな分減少量は小さく、保持される相関値が高くなるため、区間\II との区別がつきづらくなる。本研究では、減少量が小さいためこの相関減少は無視し、相関減少時間が0.5 ms以下で曖昧または消失したグループ3としてまとめている。
 \section{透明な物体の測定}
 \subsection{透明な球・液体の解析方法}
 自己相関関数の計算には二値化画像処理が不可欠である。二値化する条件は被写体と背景の色のギャップが大きいことである。しかし、透明な物体は背景を透過するため二値化に十分なギャップを作ることができない。そこで、別な方法により二値化に似た処理を提案する。 \par
@@ -334,4 +394,10 @@ Code \ref{code:line}に線分検出プログラムを示す。本プログラム
 \end{figure}
 \section{結論}
 二値化を用いて流動映像を解析し、自己相関関数を求めることで粒径と流動の外観に関係性があることがわかった。粒径が細かいほど映像の定常性は高くなり、連続体として観測される。また、細かい粉体の流動映像は数値から見ても液体のものと酷似しており、これが見分けがつきにくい要因となっている。しかし、液体は相関の減少が他の粉体よりも緩やかであるため、その僅かな時間の違いから両者を見分けることができる場合もあると考えられる。
+
+\begin{thebibliography}{3}
+  \bibitem{sight1} Patrick Cavanagh, “Visual cognition”, {\it Vision Research}, {\bf 51}, 2011, 1538-1551
+  \bibitem{sight2} 車田，梅本，大槻，『顕著に運動する粒状体群の特徴づけへの「仮現運動(apparent motion)」の試行的応用』，公益社団法人化学工学会第 48 回秋季大会（徳島大学），2016/9/8
+  \bibitem{first} 車田，『粉粒体のながれのうねり（時間的ゆらぎ）をとらえる ―シャッフリング画像処理による流動体の構造相関持続時間スケールの把捉の試み―』北関東地区化学技術懇話会技術サロン 「動く・流れる・感じる」化学工学部門依頼講義，宇都宮大学，2016/12/9
+\end{thebibliography}
 \end{document}
